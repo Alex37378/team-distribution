@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Event from "./Event";
 import CardTable from "./CardTable";
 
+//this App component has the following paths defined
 export default function App() {
   return (
     <Router>

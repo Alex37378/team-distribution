@@ -1,3 +1,5 @@
+//example student roster with names and emails
+
 const studRoster = [
   {name: "Daniel", email: "daniel@unb.ca"},
   { name: "Alex", email: "alex@unb.ca" },
