@@ -11,10 +11,11 @@ export default function Event () {
     const [isEvent, setIsEvent] = React.useState(true);
 
     return (
-        <div>
+        <div className="flex justify-center items-center h-screen w-screen">
             {isEvent && <button
-                className="px-4 py-2 rounded text-white bg-green-800 font-bold max-w-[100px] cursor-pointer
-                        hover:bg-green-700 hover:scale-[1.02]"
+                className={`px-4 py-2 rounded text-white bg-green-800 font-bold max-w-[200px]
+                            hover:bg-green-700 hover:scale-[1.02]
+                            ${location.state?.hasSubmitted ? "cursor-not-allowed" : "cursor-pointer"}`}
                 onClick={() => navigate("/teampage/form")}
                 disabled={location.state?.hasSubmitted}
             >

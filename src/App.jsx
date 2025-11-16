@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Event from "./Event";
-import Submit from "./Submit";
+import CardTable from "./CardTable";
 
 export default function App() {
   return (
@@ -8,7 +8,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<>goto /teampage</>} />
         <Route path="/teampage" element={<Event />} />
-        <Route path="/teampage/form" element={<Submit />} />
+        <Route path="/teampage/form" element={<CardTable />} />
       </Routes>
     </Router>
   );

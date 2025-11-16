@@ -13,8 +13,6 @@ export default function Submit () {
   const [errorScore, setErrorScore] = React.useState(false);
   const [errorTotal, setErrorTotal] = React.useState(false);
 
-  let submit = !(errorScore || errorTotal);
-
   function receiveFromTable(total, scores, exptotal) {
     setTableInfo({"total": total, "scores": scores, "exptotal": exptotal})
   }
@@ -22,6 +20,7 @@ export default function Submit () {
   function validateData () {
 
     setFirst(false)
+    let error = false
 
     let scorez = tableInfo["scores"]
 
@@ -30,22 +29,22 @@ export default function Submit () {
     for (let i=0; i< scorez.length; i++) {
       if (!Number.isInteger(scorez[i]) || scorez[i] < 0) {
         setErrorScore(true)
+        error = true
         break;
       }
     }
 
     if (tableInfo["total"] !== tableInfo["exptotal"]) {
       setErrorTotal(true)
+      error = true
+    }
+
+    if (!error) {
+      navigate("/teampage", {
+        state: {hasSubmitted: true}
+      });
     }
   }
-
-  useEffect(() => {
-    if (submit) {
-      navigate("/teampage"), {
-        state: {hasSubmitted: true}
-      };
-    }
-  }, [submit, first, navigate]);
 
   return (
     <div className= "flex flex-col gap-4 items-center" >
