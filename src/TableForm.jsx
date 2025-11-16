@@ -1,13 +1,19 @@
  import React from "react"
  import studRoster from "./studRoster.js"
  
- export default function TableForm () {
+ export default function TableForm ( {tableData} ) {
 
     const total = studRoster.length * 10
 
     let scrs = Array(studRoster.length).fill(0)
     const [scores, setScores] = React.useState(scrs)
     const [tot, setTot] = React.useState(0)
+
+
+    React.useEffect(() => {
+        tableData(tot, scores, total)
+    }, [tot, scores, total,])
+
 
     function updateScores (number, index) {
         
