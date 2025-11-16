@@ -32,7 +32,7 @@
     }
 
     return (
-        <div className="flex justify-center max-w-[300px] mx-auto overflow-x-auto border border-red-500 mt-10">
+        <div className="flex justify-center max-w-[300px] mx-auto overflow-x-auto mt-10">
             <table className="w-full border-collapse border border-gray-300 text-left">
                 <thead className="bg-gray-100">
                     <tr>
